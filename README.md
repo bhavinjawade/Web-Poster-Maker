@@ -14,8 +14,11 @@ Created my own web based image editor.
 6) Colors, Fonts and Shapes <br>
 7) Save Image <br>
 
+### Completely Client Side.
+
 ## Technologies Used:
 Front-end: Vanilla Javascript
-Back-end: PHP
 
 ![alt text](https://image.ibb.co/htfb3z/fiff.png)
+
+
