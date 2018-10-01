@@ -16,6 +16,7 @@ Created my own web based image editor.
 
 ## Technologies Used:
 Front-end: Vanilla Javascript
-Back-end: PHP
+
+### Completely Client Side Now
 
 ![alt text](https://image.ibb.co/htfb3z/fiff.png)
