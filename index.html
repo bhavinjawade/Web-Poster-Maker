@@ -14,7 +14,7 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
       <script type="text/javascript" src="js/html2canvas.js"></script>
-      <script type="text/javascript" src="js/jquery.plugin.html2canvas.js"></script>
+	  <script type="text/javascript" src="js/jquery.plugin.html2canvas.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <style>
          .slidecontainer {
@@ -141,7 +141,7 @@
          width: 605px;
          height: 605px;
          position: relative;
-         margin: 3% !important;
+         margin-top: 3% !important;	
          margin-left: 11% !important;
          }
          @font-face {
@@ -305,7 +305,7 @@
                      </div>
                   </div>
                   <div class = "row h-add">
-                     <div class = "col-md-12 p-0">
+                     <div class = "col-md-6 p-0">
                         <select class = "btn p-0 br-0 w-100" style = "border:none; text-align-last: center;" id = "frames" class = "dropdown fontholder" name="fonts" onchange = "addframes(this);">
                            <option value="images/selectshape">SELECT FRAMES</option>
                            <option value="images/innervoice">innervoice</option>
@@ -317,6 +317,14 @@
                            <option value="images/gyanchand">Gyanchand</option>
                            <option value="images/innervoice_img">Innervoice with Image</option>
                            <option value="images/breakthesilence">Break The Silence</option>
+                        </select>
+                     </div>
+					 <div class = "col-md-6 p-0">
+                        <select class = "btn p-0 br-0 w-100" style = "border:none; text-align-last: center;" id = "frames" class = "dropdown fontholder" name="fonts" onchange = "changeRatio(this);">
+                           <option value="1">SELECT ASPECT RATIO</option>
+                           <option value="1">Standard</option>
+                           <option value="2">4:3</option>
+                           <option value="3">16:9</option>
                         </select>
                      </div>
                   </div>
@@ -934,12 +942,29 @@
 				    document.getElementById('fullpage').style.zoom = 1;
          	}
 
+		  
+			
+			
           ///////////////////////////////////////////////////CLOSE HOLDER///////////////////////////////////////////////////////////////
 
           function closeholder(){
             document.getElementById("image-holder").style.display = "none";
           }
 
+		  
+		  ///////////////////////////////////////////////////Ratio Change///////////////////////////////////////////////////////////////
+
+		  function changeRatio(input){
+				if (input.value==="1"){
+					document.getElementById('target').style.height = "605px";
+				}
+				else if(input.value==="2"){
+					document.getElementById('target').style.height = "454px";
+				}	
+				else if (input.value==="3"){
+					document.getElementById('target').style.height = "339px";
+				}
+			}
       </script>
       <style type="text/css">
          #target {
@@ -956,6 +981,7 @@
          background-color: #d8da3d;
          }
       </style>
+	  
       </div>
    </body>
 </html>
