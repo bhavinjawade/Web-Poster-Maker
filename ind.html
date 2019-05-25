@@ -1,0 +1,195 @@
+<div class = "row h-add">
+   <div class = "col-xs-3 p-0 w-25">
+      <button class = "btn p-0 br-0 w-100" style = "border:none;" onclick="location.reload();">NEW POSTER<i class="fa fa-file-image-o icons" aria-hidden="true"></i></button>
+   </div>
+   <div class = "col-xs-3 p-0 w-25">
+      <label class = "savebtn btn p-0 br-0 w-100" style = "border:none;padding-top: 17px !important;">
+      SAVE POSTER<i class="fa fa-floppy-o icons" aria-hidden="true"></i><input hidden type="submit" value="Save Image" onclick="capture();" style ="" />
+      </label>
+   </div>
+   <div class = "col-xs-3 p-0 w-25">
+      <label class = "btn p-0 br-0 w-100" style = "border:none;margin: 0px;padding-top: 17px !important;">UPLOAD IMAGE<i class="fa fa-upload icons" aria-hidden="true"></i><input type='file' onchange	="addimage(this);" hidden/></label>
+   </div>
+   <div class = "col-xs-3 p-0 w-25">
+      <button class = "btn p-0 br-0 w-100" style = "border:none;" onclick = "addtext();" >ADD TEXT<i class="fa fa-font icons" aria-hidden="true"></i></button>
+   </div>
+</div>
+<div class = "row h-add">
+   <div class = "col-xs-4 p-0" style="width:33.33%">
+      <select class = "btn p-0 br-0 w-100" style = "border:none; text-align-last: center;" id = "frames" class = "dropdown fontholder" name="fonts" onchange = "addframes(this);">
+         <option value="images/selectshape">SELECT FRAMES</option>
+         <option value="images/innervoice">innervoice</option>
+         <option value="images/wittyfeed">wittyfeed dark</option>
+         <option value="images/wittyfeed_white">wittyfeed light</option>
+         <option value="images/indiakapulse">India Ka Pulse</option>
+         <option value="images/swbh">Sochne Wali Baat hai</option>
+         <option value="images/natkhat">Natkhat Chutkule</option>
+         <option value="images/gyanchand">Gyanchand</option>
+         <option value="images/innervoice_img">Innervoice with Image</option>
+         <option value="images/breakthesilence">Break The Silence</option>
+      </select>
+   </div>
+   <!-- <div class = "col-xs-3 p-0">
+      <select class = "btn p-0 br-0 w-100" style = "border:none; text-align-last: center;" id = "frames" class = "dropdown fontholder" name="fonts" onchange = "changeRatio(this);">
+         <option value="1">SELECT ASPECT RATIO</option>
+         <option value="1">Standard</option>
+         <option value="2">4:3</option>
+         <option value="3">16:9</option>
+      </select> 
+      </div> -->
+   <div class = "col-xs-4 p-0" style="width:33.33%">
+      <select onchange = "fontfamily(this);" class = "btn p-0 br-0 w-100" style = "border:none; text-align-last: center;" name="fonts" onchange = "fontfamily(this);">
+         <option value="Select Font">SELECT FONT</option>
+         <option value="arial">Arial</option>
+         <option value="Roboto">Roboto</option>
+         <option value="Hind">Hindi</option>
+         <option value="Raleway">Raleway</option>
+         <option value="Josefin sans">Josefin</option>
+         <option value="Concert One">Concert One</option>
+         <option value="Montserrat">Montserrat</option>
+         <option value="Baloo">Baloo</option>
+         <option value="Muli">Muli</option>
+         <option value="Kruti">Kruti Dev 010</option>
+         <option value="Stanberry">Stanberry</option>
+      </select>
+   </div>
+   <div class = "col-xs-4 p-0" style="width:33.33%">
+      <select class = "btn p-0 br-0 w-100" style = "border:none; text-align-last: center;" id = "shapes" name="fonts" onchange = "addshape(this);">
+         <option value="selectshape">SELECT SHAPE</option>
+         <option value="images/wittylogo">wittyfeed logo</option>
+         <option value="images/wittyfeed_india_logo">wittyfeed india logo</option>
+         <option value="images/innervoicelogo">Innervoice logo</option>
+         <option value="images/ivlogo">iv logo</option>
+         <option value="images/wflogo">wf logo</option>
+         <option value="Color Layer">TINT</option>
+         <option value="images/quotes">Quotes</option>
+         <option value="square">square</option>
+         <option value="rectangle">rectangle</option>
+         <option value="line">line</option>
+      </select>
+   </div>
+</div>
+
+<div class = "row h-add">
+   <div class = "col-xs-2 p-0 no-hvr">
+      <center style = "margin-top: 9%;">TEXT COLOR</center>
+   </div>
+   <div class = "col-xs-4 p-0">
+      <div class = "col-xs-2 p-0 fl" style = "border-left: none;border-top:none; border-bottom:none;">
+         <button class = "colors btn p-0 br-0" style = "border:none;background-color: #ffffff"></button>
+      </div>
+      <div class = "col-xs-2 p-0 fl" style = "border-top:none; border-bottom:none;">
+         <button class = "colors btn p-0 br-0" style = "border:none;background-color: #046fc2"></button>
+      </div>
+      <div class = "col-xs-2 p-0 fl" style = "border-top:none; border-bottom:none;">
+         <button class = "colors btn p-0 br-0" style = "border:none;background-color: #ffba01"></button>
+      </div>
+      <div class = "col-xs-2 p-0 fl" style = "border-top:none; border-bottom:none;">
+         <button class = "colors btn p-0 br-0" style = "border:none;background-color: #000000"></button>
+      </div>
+      <div class = "col-xs-4 p-0 fl" style = "border-top:none; border-bottom:none;">
+         <input class = "btn p-0 br-0 textcolors" style = "border:none;" placeholder = "#000000"/>
+      </div>
+   </div>
+   <div class = "col-xs-2 p-0 no-hvr">
+      <center style = "margin-top: 0%;">B-Color</center>
+   </div>
+   <div class = "col-xs-4 p-0">
+      <div class = "col-xs-2 p-0 fl" style = "border-left: none;border-top:none; border-bottom:none;">
+         <button class = "bkcolors btn p-0 br-0" style = "border:none;background-color: #ffffff"></button>
+      </div>
+      <div class = "col-xs-2 p-0 fl" style = "border-top:none; border-bottom:none;">
+         <button class = "bkcolors btn p-0 br-0" style = "border:none;background-color: #046fc2"></button>
+      </div>
+      <div class = "col-xs-2 p-0 fl" style = "border-top:none; border-bottom:none;">
+         <button class = "bkcolors btn p-0 br-0" style = "border:none;background-color: #ffba01"></button>
+      </div>
+      <div class = "col-xs-2 p-0 fl" style = "border-top:none; border-bottom:none;">
+         <button class = "bkcolors btn p-0 br-0" style = "border:none;background-color: #000000"></button>
+      </div>
+      <div class = "col-xs-4 p-0 fl" style = "border-top:none; border-bottom:none;">
+         <input class = "btn p-0 br-0" style = "border:none;" placeholder = "#000000"/>
+      </div>
+   </div>
+</div>
+
+<div class = "row h-add">
+   <div class = "col-xs-2 p-0 ">
+      <button class = "btn p-0 br-0" style = "border:none;" onclick = "scale(event)">RESIZE<i class="fa fa-expand icons" aria-hidden="true"></i></button>
+   </div>
+   <div class = "col-xs-4 p-0">
+      <input disabled class = "p-0 br-0 btn sliders" type="range" min="1" max="100" value="100" id="myRange">
+   </div>
+   <div class = "col-xs-2 p-0">
+      <button class = "btn p-0 br-0" style = "border:none;" onclick = "fontsize(event);">FONTSIZE<i class="fa fa-text-height icons" aria-hidden="true"></i></button>
+   </div>
+   <div class = "col-xs-4 p-0">
+      <input disabled class = "btn p-0 br-0 sliders" type="range" min="0" max="150" value="0" id="fontsize">
+   </div>
+</div>
+
+<div class = "row h-add">
+   <div class = "col-xs-2 p-0">
+      <button onclick = "opacity(event)" class = "btn p-0 br-0 w-100" style = "border:none;">TRANSPARENCY</button>
+   </div>
+   <div class = "col-xs-3 p-0">
+      <input disabled class = "btn p-0 br-0 w-100 sliders" type="range" min="0" max="10" value="10" id="opac">
+   </div>
+   <div class = "col-xs-1 p-0">
+      <button class = "btn p-0 br-0 bold"  style = "border:none;"><b>B</b></button>	
+   </div>
+   <div class = "col-xs-1 p-0">
+      <button class = "btn p-0 br-0 italic"  style = "border:none;"><i>I</i></button>
+   </div>
+   <div class = "col-xs-1 p-0">
+      <button class = "btn p-0 br-0 underline" style = "border:none;"><u>U</u></button>
+   </div>
+   <div class = "col-xs-1 p-0">
+      <button class = "btn p-0 br-0 leftalign" style = "border:none;"><i class="fa fa-align-left" aria-hidden="true"></i></button>
+   </div>
+   <div class = "col-xs-1 p-0">
+      <button class = "btn p-0 br-0 rightalign" style = "border:none;"><i class="fa fa-align-right" aria-hidden="true"></i></button>
+   </div>
+   <div class = "col-xs-1 p-0">
+      <button class = "btn p-0 br-0 centeralign" style = "border:none;"><i class="fa fa-align-center" aria-hidden="true"></i></button>
+   </div>
+   <div class = "col-xs-1 p-0">
+      <button class = "btn p-0 br-0 justifyalign" style = "border:none;"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
+   </div>
+</div>
+<div class = "row h-add">
+   <div class = "col-xs-5 p-0 w-100 fl">
+      <button class = "btn p-0 br-0 w-100 centerwhole" style = "border:none;">CENTER</button>
+   </div>
+</div>
+<div class = "row h-add">
+   <div class = "col-xs-4 p-0 no-hvr">
+      <center style = "margin-top: 9%;"  style = "border:none;">SHAPE COLOR</center>
+   </div>
+   <div class = "col-xs-8 p-0">
+      <div class = "col-xs-2 p-0 w-100 fl" style = "border-left: none;border-top:none; border-bottom:none;">
+         <button class = "shcolors btn p-0 br-0 w-100" style = "border:none;background-color: #ffffff"></button>
+      </div>
+      <div class = "col-xs-2 p-0 w-100 fl" style = "border-top:none; border-bottom:none;">
+         <button class = "shcolors btn p-0 br-0 w-100" style = "border:none;background-color: #046fc2"></button>
+      </div>
+      <div class = "col-xs-2 p-0 w-100 fl" style = "border-top:none; border-bottom:none;">
+         <button class = "shcolors btn p-0 br-0 w-100" style = "border:none;background-color: #ffba01"></button>
+      </div>
+      <div class = "col-xs-2 p-0 w-100 fl" style = "border-top:none; border-bottom:none;">
+         <button class = "shcolors btn p-0 br-0 w-100" style = "border:none;background-color: #000000"></button>
+      </div>
+      <div class = "col-xs-4 p-0 w-100 fl" style = "border-top:none; border-bottom:none;">
+         <input class = "btn p-0 br-0 w-100" style = "border:none; font-color: white" placeholder = "#000000"/>
+      </div>
+   </div>
+</div>
+<div class = "row h-add">
+   <div class = "col-xs-6 p-0">
+      <button onclick = "picheja();" class = "btn p-0 br-0 w-100" style = "border:none;"><i class="fa fa-chevron-down" style = "margin-right: 11px;font-size: 20px;" aria-hidden="true"></i>SEND BACK</button>
+   </div>
+   <div class = "col-xs-6 p-0">
+      <button onclick = "aageaa();" class = "btn p-0 br-0 w-100" style = "border:none;">BRING FRONT<i class="fa fa-chevron-up icons" aria-hidden="true"></i></button>
+   </div>
+</div>
+</div>
